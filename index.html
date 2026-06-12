@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Política de Privacidade e Termos de Uso da Xellon Bots." name="description"/>
+<meta content="#7f0000" name="theme-color"/>
+<title>Política de Privacidade | Xellon Bots</title>
+<style>
+    :root {
+      --bg: #08090c;
+      --bg-soft: #0e1015;
+      --card: rgba(19, 20, 27, 0.92);
+      --card-2: rgba(27, 12, 15, 0.78);
+      --red: #ff2a35;
+      --red-dark: #9f0710;
+      --red-deep: #4f0308;
+      --text: #f5f5f7;
+      --muted: #aeb0b8;
+      --border: rgba(255, 55, 65, 0.18);
+      --shadow: 0 18px 70px rgba(0, 0, 0, 0.45);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 5%, rgba(180, 0, 15, 0.20), transparent 32%),
+        radial-gradient(circle at 92% 20%, rgba(255, 30, 45, 0.10), transparent 28%),
+        linear-gradient(135deg, #060608 0%, #0b0c10 48%, #15070a 100%);
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.16;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 8, 11, 0.82);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 76px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #fff;
+      font-weight: 950;
+      background: linear-gradient(145deg, var(--red), var(--red-dark));
+      box-shadow: 0 8px 26px rgba(255, 31, 45, 0.30);
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .nav-link {
+      border: 0;
+      cursor: pointer;
+      color: var(--muted);
+      font: inherit;
+      font-weight: 750;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: transparent;
+      transition: .22s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: white;
+      background: linear-gradient(145deg, rgba(255,42,53,.22), rgba(130,5,12,.30));
+    }
+
+    .hero {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 88px 0 46px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 8px 13px;
+      color: #ffb8bd;
+      font-size: .84rem;
+      font-weight: 800;
+      letter-spacing: .3px;
+      border: 1px solid rgba(255, 55, 65, .25);
+      border-radius: 999px;
+      background: rgba(180, 0, 14, .12);
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 16px var(--red);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(2.4rem, 7vw, 5.3rem);
+      line-height: 1.02;
+      letter-spacing: -3px;
+    }
+
+    h1 .accent {
+      background: linear-gradient(90deg, #ff2634, #ff6b73);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .updated {
+      display: inline-block;
+      margin-top: 22px;
+      color: #d2d3d8;
+      font-size: .9rem;
+    }
+
+    .layout {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto 80px;
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 102px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(16, 17, 23, .76);
+      backdrop-filter: blur(15px);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar-title {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+    }
+
+    .toc {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .toc a {
+      padding: 9px 11px;
+      color: var(--muted);
+      font-size: .92rem;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+
+    .toc a:hover {
+      color: white;
+      background: rgba(255, 42, 53, .10);
+      transform: translateX(3px);
+    }
+
+    .content-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.025), transparent 26%),
+        var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .content-head {
+      padding: 34px 38px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, rgba(145, 0, 12, .20), transparent);
+    }
+
+    .content-head h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 4vw, 2.35rem);
+      letter-spacing: -1px;
+    }
+
+    .content-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .legal-content {
+      padding: 16px 38px 42px;
+    }
+
+    .legal-section {
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(255,255,255,.065);
+      scroll-margin-top: 110px;
+    }
+
+    .legal-section:last-child {
+      border-bottom: 0;
+    }
+
+    .legal-section h3 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 12px;
+      font-size: 1.22rem;
+      letter-spacing: -.25px;
+    }
+
+    .number {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: .8rem;
+      border-radius: 10px;
+      background: linear-gradient(145deg, var(--red), var(--red-dark));
+      box-shadow: 0 7px 20px rgba(255, 31, 45, .18);
+    }
+
+    .legal-section p {
+      margin: 0 0 12px;
+      color: #d7d8dc;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      margin: 9px 0;
+      padding-left: 24px;
+      color: #d0d1d6;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: .72em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 10px rgba(255, 42, 53, .55);
+    }
+
+    .notice {
+      margin: 22px 0 4px;
+      padding: 18px 20px;
+      color: #efeff1;
+      border: 1px solid rgba(255, 55, 65, .22);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(164, 0, 13, .16), rgba(255,255,255,.02));
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+      animation: fadeIn .28s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: rgba(5, 6, 9, .78);
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-brand {
+      color: white;
+      font-weight: 900;
+    }
+
+    .footer-brand span {
+      color: var(--red);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links button {
+      border: 0;
+      padding: 0;
+      color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+      background: none;
+    }
+
+    .footer-links button:hover {
+      color: var(--red);
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        min-height: auto;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+
+      .nav-link {
+        flex: 1;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .toc {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .legal-content,
+      .content-head {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero,
+      .layout,
+      .nav,
+      .footer-inner {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .toc {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-content {
+        padding: 8px 18px 28px;
+      }
+
+      .content-head {
+        padding: 26px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<nav aria-label="Navegação principal" class="nav">
+<a class="brand" href="#" onclick="showPage('privacy'); return false;">
+<span class="brand-mark">X</span>
+        Xellon <span>Bots</span>
+</a>
+<div class="nav-links">
+<button class="nav-link active" data-page="privacy" onclick="showPage('privacy')">
+          Política de Privacidade
+        </button>
+<button class="nav-link" data-page="terms" onclick="showPage('terms')">
+          Termos de Uso
+        </button>
+</div>
+</nav>
+</header>
+<main>
+<section class="hero">
+<div class="badge">
+<span class="badge-dot"></span>
+        Segurança, transparência e responsabilidade
+      </div>
+<h1>
+        Documentos legais da
+        <span class="accent">Xellon Bots</span>
+</h1>
+<p>
+        Informações sobre o uso dos nossos bots, tratamento de dados,
+        responsabilidades dos administradores e regras de utilização.
+      </p>
+<span class="updated">Última atualização: 11 de junho de 2026</span>
+</section>
+
+<!-- POLÍTICA DE PRIVACIDADE -->
+<section class="page active" id="privacy">
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="sidebar-title">Nesta página</p>
+      <div class="toc">
+        <a href="#priv-1">1. Apresentação</a>
+        <a href="#priv-2">2. Definições</a>
+        <a href="#priv-3">3. Funcionamento</a>
+        <a href="#priv-4">4. Dados processados</a>
+        <a href="#priv-5">5. Mensagens</a>
+        <a href="#priv-6">6. Pix e valores</a>
+        <a href="#priv-7">7. Finalidades</a>
+        <a href="#priv-8">8. Logs e transcripts</a>
+        <a href="#priv-9">9. Armazenamento</a>
+        <a href="#priv-10">10. Compartilhamento</a>
+        <a href="#priv-11">11. Responsabilidades</a>
+        <a href="#priv-12">12. Segurança</a>
+        <a href="#priv-13">13. Direitos</a>
+        <a href="#priv-14">14. Suspensão</a>
+        <a href="#priv-15">15. Atualizações</a>
+        <a href="#priv-16">16. Contato</a>
+      </div>
+    </aside>
+
+    <article class="content-card">
+      <div class="content-head">
+        <h2>Política de Privacidade</h2>
+        <p>
+          Este documento descreve como os sistemas da Xellon Bots operam dentro do Discord,
+          quais informações são necessárias para cada funcionalidade e como esses dados são
+          utilizados, armazenados e protegidos.
+        </p>
+      </div>
+
+      <div class="legal-content">
+        <section class="legal-section" id="priv-1">
+          <h3><span class="number">1</span>Apresentação</h3>
+          <p>
+            A Xellon Bots desenvolve soluções de automação para servidores Discord, incluindo
+            sistemas de filas, partidas, mediação, tickets, rankings, economia virtual,
+            renovação de cargos, painéis administrativos, logs e outras ferramentas de gestão.
+          </p>
+          <p>
+            Esta Política de Privacidade se aplica aos bots, painéis e serviços operados pela
+            Xellon Bots. Ao adicionar um bot a um servidor ou interagir com suas funcionalidades,
+            o usuário reconhece que determinadas informações técnicas e operacionais precisam
+            ser processadas para que o serviço funcione corretamente.
+          </p>
+          <p>
+            O processamento realizado pelo bot é limitado às funcionalidades habilitadas pelo
+            administrador do servidor e às ações executadas pelos próprios usuários.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-2">
+          <h3><span class="number">2</span>Definições importantes</h3>
+
+          <p><strong>Xellon Bots:</strong> responsável pelo desenvolvimento, manutenção e operação técnica dos bots e serviços descritos nesta política.</p>
+
+          <p><strong>Bot:</strong> aplicação integrada ao Discord que executa comandos, interações, automações e rotinas configuradas para determinado servidor.</p>
+
+          <p><strong>Administrador do Servidor:</strong> usuário autorizado a configurar cargos, canais, permissões, painéis, taxas, logs e demais comportamentos do bot.</p>
+
+          <p><strong>Mediador:</strong> usuário autorizado pelo servidor a administrar partidas, orientar participantes, informar dados da sala e, quando habilitado, cadastrar uma chave Pix para geração de cobrança.</p>
+
+          <p><strong>Jogador ou Participante:</strong> usuário que entra em uma fila, participa de uma partida, utiliza um ticket ou interage com qualquer recurso disponibilizado pelo bot.</p>
+
+          <p><strong>Fila:</strong> estrutura criada com base em modalidade, formato, plataforma e valor configurado. Quando os requisitos definidos são atendidos, o bot pode criar automaticamente uma partida.</p>
+
+          <p><strong>Canal de Partida:</strong> canal ou tópico temporário criado para reunir jogadores e mediadores, exibir instruções, registrar informações da sala e organizar o andamento da partida.</p>
+
+          <p><strong>Transcript:</strong> registro de mensagens e eventos de um ticket, partida ou canal temporário, produzido quando essa funcionalidade estiver habilitada.</p>
+
+          <p><strong>Dados Operacionais:</strong> informações necessárias para manter comandos, permissões, filas, partidas, rankings, tickets, blacklists, logs e configurações em funcionamento.</p>
+        </section>
+
+        <section class="legal-section" id="priv-3">
+          <h3><span class="number">3</span>Como os principais sistemas funcionam</h3>
+
+          <p><strong>Filas de Partida:</strong> o administrador define formato, modalidade, quantidade de jogadores, plataforma e demais regras. Quando uma fila atinge a quantidade necessária de participantes, o bot pode criar uma partida automaticamente.</p>
+
+          <p><strong>Partidas:</strong> o bot organiza os participantes em um canal ou tópico separado, identifica o mediador responsável e disponibiliza os controles necessários para iniciar, finalizar, cancelar ou registrar o resultado.</p>
+
+          <p><strong>Mediação:</strong> mediadores autorizados podem gerenciar a partida, informar ID e senha da sala, confirmar etapas e executar ações administrativas permitidas pelo servidor.</p>
+
+          <p><strong>QR Code Pix:</strong> quando o recurso estiver habilitado, o bot pode transformar uma chave Pix cadastrada pelo mediador em um QR Code para exibição no canal de partida. A chave pertence ao mediador ou ao responsável indicado pelo servidor.</p>
+
+          <p><strong>Configuração de Taxas:</strong> o administrador pode definir percentuais ou valores usados pelo próprio servidor para organizar partidas e mediações. O bot apenas realiza cálculos e exibe as informações configuradas.</p>
+
+          <p><strong>Tickets:</strong> o bot pode criar canais privados de atendimento, controlar participantes, registrar ações e gerar transcript ao final do atendimento.</p>
+
+          <p><strong>Rankings e Economia Virtual:</strong> vitórias, derrotas, partidas, moedas, giros, caixas e outros indicadores podem ser armazenados para compor rankings ou recursos internos. Esses dados não representam moeda oficial nem saldo bancário.</p>
+
+          <p><strong>Logs Administrativos:</strong> ações relevantes podem ser registradas em canais escolhidos pelo administrador, incluindo criação e encerramento de partidas, alterações de configuração, uso de comandos e eventos de segurança.</p>
+        </section>
+
+        <section class="legal-section" id="priv-4">
+          <h3><span class="number">4</span>Dados que podem ser processados</h3>
+          <p>
+            O tipo de informação processada depende dos sistemas ativados no servidor. Entre
+            os dados que podem ser utilizados estão:
+          </p>
+          <ul>
+            <li>ID, nome, ícone e configurações do servidor;</li>
+            <li>ID, nome de usuário, nome de exibição e avatar público do usuário;</li>
+            <li>IDs de canais, tópicos, categorias, cargos, mensagens e interações;</li>
+            <li>cargos atribuídos ao usuário dentro do servidor;</li>
+            <li>comandos por prefixo, comandos slash, botões, menus e modais utilizados;</li>
+            <li>configurações definidas pelos administradores;</li>
+            <li>dados de filas, partidas, mediadores, resultados e rankings;</li>
+            <li>dados de tickets, blacklists, renovações e economia virtual;</li>
+            <li>chaves Pix cadastradas voluntariamente em funcionalidades específicas;</li>
+            <li>mensagens e arquivos incluídos em logs ou transcripts;</li>
+            <li>registros técnicos de erros, uso, segurança e prevenção de abuso.</li>
+          </ul>
+          <div class="notice">
+            O bot não solicita a senha da conta Discord. Tokens, senhas, códigos de
+            autenticação e outras credenciais privadas nunca devem ser enviados em canais,
+            tickets ou mensagens destinadas ao suporte.
+          </div>
+        </section>
+
+        <section class="legal-section" id="priv-5">
+          <h3><span class="number">5</span>Processamento do conteúdo de mensagens</h3>
+          <p>
+            Alguns recursos dependem do acesso ao conteúdo de mensagens. Esse acesso não é
+            utilizado para monitoramento geral do servidor, publicidade comportamental ou
+            criação de perfis pessoais.
+          </p>
+          <p>O conteúdo pode ser processado quando necessário para:</p>
+          <ul>
+            <li>identificar comandos enviados por prefixo;</li>
+            <li>receber ID, senha, mapa, modo ou outras informações de sala;</li>
+            <li>reconhecer confirmações operacionais, como a mensagem “go”;</li>
+            <li>validar mensagens permitidas em canais específicos;</li>
+            <li>consultar ou registrar IDs em sistemas de blacklist;</li>
+            <li>detectar e bloquear chaves Pix enviadas fora do fluxo autorizado;</li>
+            <li>gerar QR Code a partir de uma chave fornecida voluntariamente;</li>
+            <li>produzir logs e transcripts configurados pelo administrador;</li>
+            <li>identificar spam, fraude, exploração de falhas ou uso indevido.</li>
+          </ul>
+          <p>
+            Mensagens comuns que não fazem parte de uma funcionalidade configurada não são
+            utilizadas pela Xellon Bots para finalidades externas ao funcionamento e à
+            segurança do serviço.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-6">
+          <h3><span class="number">6</span>Pix, taxas e movimentações financeiras</h3>
+          <p>
+            A Xellon Bots não atua como banco, instituição de pagamento, carteira digital,
+            casa de apostas ou gateway financeiro nas transações realizadas entre jogadores,
+            mediadores e administradores.
+          </p>
+          <p><strong>Cadastro de Pix:</strong> a chave é informada voluntariamente pelo mediador ou responsável autorizado e pode ser armazenada para permitir a geração recorrente de QR Codes.</p>
+          <p><strong>Exibição do QR Code:</strong> o bot apenas converte a chave cadastrada em uma representação de pagamento e a apresenta no canal configurado.</p>
+          <p><strong>Destino do pagamento:</strong> qualquer valor enviado pelo usuário é direcionado diretamente à conta vinculada à chave informada. A Xellon Bots não recebe, retém, transfere ou administra esse dinheiro.</p>
+          <p><strong>Taxas configuradas:</strong> percentuais ou valores definidos no painel representam regras internas do servidor. O bot pode calcular e exibir esses valores, mas não realiza a cobrança nem garante o repasse.</p>
+          <p><strong>Responsabilidade:</strong> confirmação de pagamento, reembolso, disputa, fraude, chave incorreta e qualquer acordo financeiro são de responsabilidade dos usuários e da administração do servidor.</p>
+          <p>
+            Essa regra não se aplica ao pagamento direto de planos ou serviços contratados
+            oficialmente com a própria Xellon Bots, que constitui uma relação comercial
+            separada entre a empresa e o cliente.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-7">
+          <h3><span class="number">7</span>Finalidades do processamento</h3>
+          <p>Os dados são utilizados para finalidades operacionais específicas, incluindo:</p>
+          <ul>
+            <li>executar comandos e interações solicitadas pelo usuário;</li>
+            <li>criar, atualizar e encerrar filas, partidas, tickets, canais e tópicos;</li>
+            <li>verificar cargos, permissões e níveis de acesso;</li>
+            <li>identificar jogadores, mediadores e administradores responsáveis;</li>
+            <li>manter rankings, históricos, blacklists e economia virtual;</li>
+            <li>aplicar configurações próprias de cada servidor;</li>
+            <li>gerar logs, transcripts, relatórios e registros administrativos;</li>
+            <li>prestar suporte técnico e diagnosticar falhas;</li>
+            <li>prevenir abuso, spam, fraude e exploração de vulnerabilidades;</li>
+            <li>manter a estabilidade e a segurança da infraestrutura.</li>
+          </ul>
+          <p>
+            A Xellon Bots não vende dados pessoais, não utiliza mensagens para anúncios
+            personalizados e não emprega o conteúdo processado pelos bots no treinamento de
+            modelos de inteligência artificial.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-8">
+          <h3><span class="number">8</span>Logs, históricos e transcripts</h3>
+          <p>
+            O administrador pode configurar canais destinados ao recebimento de logs. Esses
+            registros permitem acompanhar ações executadas pelo bot e por usuários autorizados.
+          </p>
+          <p>Os registros podem incluir:</p>
+          <ul>
+            <li>identificação dos participantes e do mediador;</li>
+            <li>horário de criação, início, finalização ou cancelamento;</li>
+            <li>resultado informado para a partida;</li>
+            <li>alterações administrativas e uso de comandos;</li>
+            <li>mensagens incluídas em transcripts;</li>
+            <li>erros técnicos e eventos relacionados à segurança.</li>
+          </ul>
+          <p>
+            O acesso aos canais de logs e aos transcripts é definido pelos administradores
+            do servidor. A administração deve restringir essas áreas somente a pessoas que
+            realmente necessitem das informações.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-9">
+          <h3><span class="number">9</span>Armazenamento e retenção</h3>
+          <p>
+            Configurações, permissões, filas, partidas, rankings, tickets, blacklists,
+            informações de mediadores e outros dados operacionais podem permanecer armazenados
+            enquanto forem necessários para o funcionamento do serviço.
+          </p>
+          <p>
+            O prazo de retenção varia conforme o tipo de registro. Informações podem ser
+            removidas quando deixam de ser necessárias, quando o serviço é encerrado ou após
+            uma solicitação válida de exclusão.
+          </p>
+          <p>
+            Registros relacionados a fraude, abuso, chargeback, violação de segurança,
+            suspensão ou disputa podem ser mantidos por período adicional quando isso for
+            necessário para proteção do serviço, exercício de direitos ou cumprimento de
+            obrigação legal.
+          </p>
+          <p>
+            Conteúdos que permanecem publicados dentro do Discord também estão sujeitos às
+            permissões, configurações e ações dos administradores da plataforma e do servidor.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-10">
+          <h3><span class="number">10</span>Acesso e compartilhamento</h3>
+          <p>A Xellon Bots não comercializa dados de usuários.</p>
+          <p>As informações podem ser acessadas, conforme a necessidade, por:</p>
+          <ul>
+            <li>administradores e membros autorizados do servidor;</li>
+            <li>equipe técnica da Xellon Bots, para suporte, manutenção e segurança;</li>
+            <li>provedores de hospedagem, banco de dados e infraestrutura;</li>
+            <li>autoridades competentes, mediante obrigação legal ou solicitação válida.</li>
+          </ul>
+          <p>
+            Prestadores de infraestrutura processam apenas os dados necessários para hospedar,
+            transmitir, armazenar ou proteger o serviço.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-11">
+          <h3><span class="number">11</span>Responsabilidades do servidor e dos usuários</h3>
+          <p>
+            A Xellon Bots fornece a tecnologia, enquanto o administrador determina como o bot
+            será configurado dentro do servidor.
+          </p>
+          <p>Compete ao administrador:</p>
+          <ul>
+            <li>definir corretamente cargos, canais e permissões;</li>
+            <li>controlar quem pode acessar comandos administrativos;</li>
+            <li>restringir canais de logs, tickets e transcripts;</li>
+            <li>verificar as chaves Pix cadastradas por mediadores;</li>
+            <li>informar aos membros sobre regras próprias do servidor;</li>
+            <li>remover permissões de pessoas que deixarem a equipe;</li>
+            <li>não configurar o bot para coleta abusiva ou enganosa de informações.</li>
+          </ul>
+          <p>
+            Usuários são responsáveis pela veracidade das informações que fornecem, pelas
+            ações realizadas em suas contas e pelos acordos firmados com outros participantes.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-12">
+          <h3><span class="number">12</span>Segurança da informação</h3>
+          <p>
+            São adotadas medidas técnicas e administrativas razoáveis para reduzir riscos de
+            acesso não autorizado, alteração, perda ou uso indevido dos dados.
+          </p>
+          <p>
+            Essas medidas podem incluir controle de acesso, autenticação, separação de dados
+            por servidor, limitação de permissões, registros de segurança, backups e
+            monitoramento de falhas.
+          </p>
+          <p>
+            Nenhum serviço conectado à internet é totalmente imune a incidentes. Quando um
+            risco relevante for identificado, a Xellon Bots poderá limitar recursos, invalidar
+            acessos, suspender sistemas ou adotar outras medidas de contenção.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-13">
+          <h3><span class="number">13</span>Direitos e solicitações de exclusão</h3>
+          <p>
+            Usuários podem solicitar informações, correção ou exclusão de dados vinculados ao
+            seu ID do Discord. Administradores podem solicitar a exclusão de dados relacionados
+            ao servidor sob sua responsabilidade.
+          </p>
+          <p>
+            Para localizar e validar a solicitação, poderá ser necessário informar o ID do
+            usuário, o ID do servidor e outros elementos que comprovem a relação com os dados.
+          </p>
+          <p>
+            A exclusão poderá ser limitada quando houver necessidade de preservar registros
+            para prevenção de fraude, investigação de abuso, segurança, exercício de direitos
+            ou cumprimento de obrigação legal.
+          </p>
+          <p>
+            Mensagens armazenadas exclusivamente em canais do Discord podem depender da ação
+            dos administradores do servidor ou dos mecanismos disponibilizados pela própria
+            plataforma.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-14">
+          <h3><span class="number">14</span>Uso indevido, suspensão e preservação de registros</h3>
+          <p>
+            É proibido utilizar os serviços para golpes, spam, ataques, fraude, exploração de
+            falhas, perseguição, violação das regras do Discord ou qualquer atividade ilegal.
+          </p>
+          <p>
+            Quando houver indícios de uso indevido, a Xellon Bots poderá suspender o acesso,
+            bloquear funcionalidades, preservar registros técnicos e encerrar o serviço do
+            servidor ou cliente envolvido.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-15">
+          <h3><span class="number">15</span>Atualizações desta política</h3>
+          <p>
+            Esta política pode ser revisada para refletir alterações nos bots, na infraestrutura,
+            nas exigências do Discord, na legislação aplicável ou nos procedimentos de segurança.
+          </p>
+          <p>
+            A versão vigente será identificada pela data exibida no início da página. Mudanças
+            relevantes poderão ser comunicadas pelos canais oficiais da Xellon Bots.
+          </p>
+        </section>
+
+        <section class="legal-section" id="priv-16">
+          <h3><span class="number">16</span>Contato</h3>
+          <p>
+            Solicitações relacionadas à privacidade, dados, segurança ou funcionamento dos
+            serviços devem ser encaminhadas pelo servidor oficial de suporte da Xellon Bots ou
+            pelo canal de atendimento informado ao cliente.
+          </p>
+          <p>
+            Para agilizar a análise, informe o ID do usuário, o ID do servidor e uma descrição
+            objetiva da solicitação.
+          </p>
+        </section>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- TERMOS DE USO -->
+<section class="page" id="terms">
+<div class="layout">
+<aside class="sidebar">
+<p class="sidebar-title">Nesta página</p>
+<div class="toc">
+<a href="#term-1">1. Aceitação</a>
+<a href="#term-2">2. Licença de uso</a>
+<a href="#term-3">3. Responsabilidades</a>
+<a href="#term-4">4. Condutas proibidas</a>
+<a href="#term-5">5. Disponibilidade</a>
+<a href="#term-6">6. Pagamentos e planos</a>
+<a href="#term-7">7. Suspensão</a>
+<a href="#term-8">8. Alterações</a>
+<a href="#term-9">9. Contato</a>
+</div>
+</aside>
+<article class="content-card">
+<div class="content-head">
+<h2>Termos de Uso</h2>
+<p>
+              Regras gerais para contratação, configuração e utilização dos bots
+              e serviços oferecidos pela Xellon Bots.
+            </p>
+</div>
+<div class="legal-content">
+<section class="legal-section" id="term-1">
+<h3><span class="number">1</span>Aceitação dos termos</h3>
+<p>
+                Ao contratar, instalar, configurar ou utilizar um bot da Xellon Bots,
+                o cliente e os administradores do servidor declaram que leram e
+                concordam com estes Termos de Uso e com a Política de Privacidade.
+              </p>
+</section>
+<section class="legal-section" id="term-2">
+<h3><span class="number">2</span>Licença e acesso ao serviço</h3>
+<p>
+                A contratação concede ao cliente uma licença limitada, temporária,
+                revogável e não exclusiva para utilizar o bot durante o período do plano contratado.
+              </p>
+<p>
+                A compra ou assinatura não transfere ao cliente a propriedade do código-fonte,
+                da marca, da estrutura, dos sistemas ou de outros ativos da Xellon Bots.
+              </p>
+</section>
+<section class="legal-section" id="term-3">
+<h3><span class="number">3</span>Responsabilidades do cliente</h3>
+<p>O cliente e os administradores do servidor são responsáveis por:</p>
+<ul>
+<li>configurar corretamente cargos, canais e permissões;</li>
+<li>manter tokens, chaves e credenciais em segurança;</li>
+<li>utilizar o bot de acordo com as regras do Discord e com a legislação aplicável;</li>
+<li>controlar quem possui acesso aos painéis e comandos administrativos;</li>
+<li>verificar as configurações antes de colocar o bot em uso público.</li>
+</ul>
+</section>
+<section class="legal-section" id="term-4">
+<h3><span class="number">4</span>Condutas proibidas</h3>
+<p>É proibido utilizar os serviços para:</p>
+<ul>
+<li>golpes, fraudes, spam ou atividades ilegais;</li>
+<li>assediar, ameaçar ou prejudicar outros usuários;</li>
+<li>tentar invadir, explorar ou comprometer o bot e sua infraestrutura;</li>
+<li>revender, copiar ou distribuir o código e os sistemas sem autorização;</li>
+<li>burlar limitações, planos, permissões ou mecanismos de segurança;</li>
+<li>violar os Termos de Serviço, as Diretrizes ou as Políticas do Discord.</li>
+</ul>
+</section>
+<section class="legal-section" id="term-5">
+<h3><span class="number">5</span>Disponibilidade e manutenção</h3>
+<p>
+                A Xellon Bots busca manter os serviços disponíveis e estáveis, mas
+                não garante funcionamento ininterrupto. Manutenções, falhas de terceiros,
+                alterações no Discord, indisponibilidade de hospedagem, banco de dados ou
+                internet podem afetar temporariamente o serviço.
+              </p>
+</section>
+<section class="legal-section" id="term-6">
+<h3><span class="number">6</span>Pagamentos, planos e renovação</h3>
+<p>
+                O acesso ao bot pode depender de plano ativo. Valores, vencimentos,
+                formas de pagamento, recursos incluídos e regras de renovação são
+                informados ao cliente no momento da contratação.
+              </p>
+<p>
+                A falta de renovação poderá resultar na suspensão automática do serviço,
+                sem obrigação de manter o bot ativo após o vencimento.
+              </p>
+</section>
+<section class="legal-section" id="term-7">
+<h3><span class="number">7</span>Suspensão ou encerramento</h3>
+<p>
+                A Xellon Bots poderá suspender ou encerrar o acesso quando houver
+                falta de pagamento, abuso, tentativa de fraude, risco à segurança,
+                violação destes termos ou descumprimento das regras do Discord.
+              </p>
+</section>
+<section class="legal-section" id="term-8">
+<h3><span class="number">8</span>Alterações nos documentos</h3>
+<p>
+                Estes Termos de Uso e a Política de Privacidade podem ser atualizados
+                para refletir mudanças nos serviços, requisitos legais, segurança ou
+                funcionamento da plataforma Discord.
+              </p>
+<p>
+                A data da última atualização será exibida no início desta página.
+              </p>
+</section>
+<section class="legal-section" id="term-9">
+<h3><span class="number">9</span>Contato</h3>
+<p>
+                Para dúvidas sobre estes termos, planos, suporte ou utilização dos serviços,
+                entre em contato pelo servidor oficial da Xellon Bots ou pelo canal de
+                atendimento informado ao cliente.
+              </p>
+</section>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-inner">
+<div>
+<div class="footer-brand">Xellon <span>Bots</span></div>
+<div>© 2026 Xellon Bots. Todos os direitos reservados.</div>
+</div>
+<div class="footer-links">
+<button onclick="showPage('privacy')">Política de Privacidade</button>
+<button onclick="showPage('terms')">Termos de Uso</button>
+</div>
+</div>
+</footer>
+<script>
+    function showPage(pageName) {
+      document.querySelectorAll(".page").forEach((page) => {
+        page.classList.toggle("active", page.id === pageName);
+      });
+
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.classList.toggle("active", link.dataset.page === pageName);
+      });
+
+      document.title =
+        pageName === "privacy"
+          ? "Política de Privacidade | Xellon Bots"
+          : "Termos de Uso | Xellon Bots";
+
+      history.replaceState(null, "", "#" + pageName);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    const initialPage = location.hash.replace("#", "");
+    if (initialPage === "terms" || initialPage === "privacy") {
+      showPage(initialPage);
+    }
+  </script>
+</body>
+</html>
